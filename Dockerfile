@@ -1,11 +1,11 @@
-FROM alpine:latest
+FROM alpine:3.15
 
 RUN addgroup webdriver && adduser -h /home/webdriver -s /bin/sh -G webdriver -D webdriver
 
 WORKDIR /home/webdriver
 
-RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories
-RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+RUN echo "https://dl-cdn.alpinelinux.org/alpine/v3.15/main" >> /etc/apk/repositories
+RUN echo "https://dl-cdn.alpinelinux.org/alpine/v3.15/community" >> /etc/apk/repositories
 
 RUN apk update && apk add chromium-chromedriver chromium
 
